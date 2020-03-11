@@ -2,6 +2,7 @@
 Resource        ../../resources/services.robot
 *** Test Cases ***
 New Session
+    [Tags]              smoke
     &{payload}=         Create Dictionary       email=lourival@google.com
     ${response}=        Post Session            ${payload}
     ${code}=            Convert To String       ${response.status_code}

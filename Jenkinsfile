@@ -13,7 +13,8 @@ pipeline {
       }
       stage("Test"){
           steps{
-              sh 'robot -d .logs/test'
+              sh "robot -d ./logs tests"
+              robot "logs"
           }
       }
    }

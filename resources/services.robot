@@ -43,7 +43,7 @@ Save Spot List
     ${json}=         Evaluate         json.loads('''${my_spots}''')    json
     ${data}=         Set Variable     ${json['data']}
 
-    :FOR    ${item}     ${spot_id}=     Insert Unique Spot      ${my_spot}      @{data}
+    :FOR    ${item}  IN   @{data}
     \       ${thumb}=           Get From Dictionary     ${item}         thumb
     \       ${payload}=         Get From Dictionary     ${item}         payload
     \       ${thumb}            Get Image       ${thumb}
